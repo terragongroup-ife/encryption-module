@@ -30,7 +30,6 @@ class EncryptionHelper {
                 let outputFilePath = filePath + "/_encrypt_" + fileName;
                
                 this.encryptFileContents(fullFilePath, outputFilePath);
-                console.log("Done with file");
                 channel.ack(messageObject);
               }
               
@@ -62,7 +61,6 @@ class EncryptionHelper {
               msisdn: response.data.response.encrypted
             };
             rl.output.write(JSON.stringify(newValue) + "\n");
-            console.log("Written to file");
           }
         });
     });
