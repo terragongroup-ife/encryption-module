@@ -27,7 +27,8 @@ class EncryptionHelper {
                 
                 let fileName = path.basename(fullFilePath);
                 let filePath = path.dirname(fullFilePath);
-                let outputFilePath = filePath + "/_encrypt_" + fileName;
+                let timeStamp = Date.now();
+                let outputFilePath = filePath + "/_encrypt_" + timeStamp + "_" + fileName;
                
                 this.encryptFileContents(fullFilePath, outputFilePath);
                 channel.ack(messageObject);
